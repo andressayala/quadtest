@@ -1,0 +1,12 @@
+# Move to the "rsl_rl" directory. Copy the "logs" folder here as well.
+$ cd IsaacLab/scripts/reinforcement_learning/rsl_rl
+
+# To train rough env with height scan
+$ python train.py --task Isaac-Velocity-Rough-Custom-Quad-v0 --num_envs 1024 --headless
+# To run trained model with height scan
+$ python play.py --task Isaac-Velocity-Rough-Custom-Quad-v0 --num_envs 32 --checkpoint ./logs/height_scanner_model.pt
+
+# To train rough env with depth value
+$ python train.py --task Isaac-Velocity-Rough-Depth-Custom-Quad-v0 --enable_cameras --num_envs 1024 --headless
+# To run trained model with height scan
+$ python play.py --task Isaac-Velocity-Rough-Depth-Custom-Quad-v0 --enable_cameras --num_envs 32 --checkpoint ./logs/depth_camera_model.pt
